@@ -1,0 +1,15 @@
+.navigation {
+  width: 100%;
+  padding: 15px;
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.link {
+  display: inline-block;
+  padding: 10px 0px;
+  margin-right: 20px;
+}
+
+.linkActive {
+  color: tomato;
+}

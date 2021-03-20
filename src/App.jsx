@@ -1,10 +1,19 @@
 import React from 'react';
-import { trending, search, fullInfo, credirs, reviews } from './Api/Api';
+import { Route, Switch } from 'react-router-dom';
+import Navigation from './components/Navigation';
+import HomePage from './components/HomePage';
+import MoviesPage from './components/MoviesPage';
+import MovieDetailsPage from './components/MovieDetailsPage';
 
 const App = () => {
   return (
     <>
-      <h1>HIkjflkjlkgjdslk</h1>
+      <Navigation />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/movies/:movieId" component={MovieDetailsPage} />
+        <Route path="/movies" component={MoviesPage} />
+      </Switch>
     </>
   );
 };

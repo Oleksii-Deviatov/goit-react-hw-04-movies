@@ -65,6 +65,8 @@ const reviews = async movie_id => {
 
 export { trending, search, fullInfo, credirs, reviews };
 
+// import { trending, search, fullInfo, credirs, reviews } from './Api/Api';
+
 // trending().then(data => console.log(data));
 
 // search('qwe').then(data => console.log(data));
