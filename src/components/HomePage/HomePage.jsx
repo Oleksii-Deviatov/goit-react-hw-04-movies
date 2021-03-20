@@ -2,7 +2,7 @@ import { React, useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { trending } from '../../Api';
 
-function Trandings() {
+function HomePage() {
   const [trend, setTrend] = useState([]);
 
   useEffect(() => {
@@ -24,4 +24,4 @@ function Trandings() {
   );
 }
 
-export default Trandings;
+export default HomePage;
