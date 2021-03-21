@@ -10,7 +10,6 @@ const Cast = () => {
     credirs(movieId).then(data => setCasts(data.cast));
   }, [movieId]);
 
-  // console.log(casts);
   return (
     <>
       {casts && (
@@ -18,7 +17,7 @@ const Cast = () => {
           {casts.map(el => (
             <li>
               <img
-                src={`https://image.tmdb.org/t/p/w300/${el.profile_path}`}
+                src={`https://image.tmdb.org/t/p/w200/${el.profile_path}`}
                 alt={el.name}
               />
               <p>{el.name}</p>

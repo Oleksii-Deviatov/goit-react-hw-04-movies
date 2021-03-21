@@ -1,12 +1,15 @@
 import { React, useState, useEffect } from 'react';
-import { useParams } from 'react-router';
+import { useParams, useRouteMatch } from 'react-router';
 import { fullInfo } from '../../Api';
 import { Route, NavLink } from 'react-router-dom';
 import Cast from '../Cast';
 import Reviews from '../Reviews';
+import styles from './styles.module.css';
 
 function MovieDetailsPage() {
   const { movieId } = useParams();
+  const { url, path } = useRouteMatch();
+
   const [movie, setMovie] = useState('');
 
   useEffect(() => {
@@ -17,11 +20,14 @@ function MovieDetailsPage() {
     <>
       {movie && (
         <>
+          <button>go back(не работает)</button>
           <img
+            className={styles.img}
             src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
             alt="{movie.title}"
           />
           <h2>{movie.title}</h2>
+          <p>User Score: {movie.vote_average}</p>
           <p>Overview</p>
           <p>{movie.overview}</p>
           <p>Genres</p>
@@ -31,14 +37,14 @@ function MovieDetailsPage() {
           </ul>
           <ul>
             <li>
-              <NavLink to={`/movies/${movieId}/cast`}>Cast</NavLink>
+              <NavLink to={`${url}/cast`}>Cast</NavLink>
             </li>
             <li>
-              <NavLink to={`/movies/${movieId}/reviews`}>Reviews</NavLink>
+              <NavLink to={`${url}/reviews`}>Reviews</NavLink>
             </li>
           </ul>
-          <Route path="/movies/:movieId/cast" component={Cast} />
-          <Route path="/movies/:movieId/reviews" component={Reviews} />
+          <Route path={`${path}/cast`} component={Cast} />
+          <Route path={`${path}/reviews`} component={Reviews} />
         </>
       )}
     </>

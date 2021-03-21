@@ -8,15 +8,13 @@ function HomePage() {
   useEffect(() => {
     trending().then(data => setTrend(data));
   }, []);
-  console.log('jdkha');
+
   return (
     <>
       <ul>
-        {trend.map(({ id, original_title, name, original_name }) => (
+        {trend.map(({ id, title }) => (
           <li key={id}>
-            <NavLink to={`/movies/${id}`}>
-              {original_title || name || original_name}
-            </NavLink>
+            <NavLink to={`/movies/${id}`}>{title}</NavLink>
           </li>
         ))}
       </ul>

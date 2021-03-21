@@ -11,7 +11,7 @@ axios.defaults.params = {
 
 const trending = async () => {
   try {
-    const { data } = await axios.get('trending/all/day');
+    const { data } = await axios.get('trending/movie/day');
     return data.results;
   } catch (error) {
     console.log('error', { error });
@@ -64,15 +64,3 @@ const reviews = async movie_id => {
 };
 
 export { trending, search, fullInfo, credirs, reviews };
-
-// import { trending, search, fullInfo, credirs, reviews } from './Api/Api';
-
-// trending().then(data => console.log(data));
-
-// search('qwe').then(data => console.log(data));
-
-// fullInfo('544401').then(data => console.log(data));
-
-// credirs('544401').then(data => console.log(data));
-
-// reviews('544401').then(data => console.log(data));

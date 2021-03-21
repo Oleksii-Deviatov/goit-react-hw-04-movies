@@ -7,12 +7,12 @@ const Reviews = () => {
   const [review, setCasts] = useState();
 
   useEffect(() => {
-    reviews(movieId).then(data => setCasts(data));
+    reviews(movieId).then(data => data.length === 0 || setCasts(data));
   }, [movieId]);
 
   return (
     <>
-      {review && (
+      {review ? (
         <ul>
           {review.map(el => (
             <li key={el.id}>
@@ -21,9 +21,13 @@ const Reviews = () => {
             </li>
           ))}
         </ul>
+      ) : (
+        <p>We don't have any reviews for this movie</p>
       )}
     </>
   );
 };
 
 export default Reviews;
+
+//We don't have any reviews for this movie
