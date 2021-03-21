@@ -14,14 +14,14 @@ const Cast = () => {
     <>
       {casts && (
         <ul>
-          {casts.map(el => (
+          {casts.map(({ profile_path, name, character }) => (
             <li>
               <img
-                src={`https://image.tmdb.org/t/p/w200/${el.profile_path}`}
-                alt={el.name}
+                src={`https://image.tmdb.org/t/p/w200/${profile_path}`}
+                alt={name}
               />
-              <p>{el.name}</p>
-              <p>Character: {el.character}</p>
+              <p>{name}</p>
+              <p>Character: {character}</p>
             </li>
           ))}
         </ul>

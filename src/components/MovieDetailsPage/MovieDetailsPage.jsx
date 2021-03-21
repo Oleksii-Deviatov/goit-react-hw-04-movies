@@ -5,7 +5,7 @@ import {
   useParams,
   useRouteMatch,
 } from 'react-router';
-import { fullInfo, search } from '../../Api';
+import { fullInfo } from '../../Api';
 import { Route, NavLink } from 'react-router-dom';
 import Cast from '../Cast';
 import Reviews from '../Reviews';

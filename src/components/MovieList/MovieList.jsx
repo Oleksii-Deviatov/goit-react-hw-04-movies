@@ -1,9 +1,10 @@
 import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useRouteMatch } from 'react-router-dom';
 
 const MovieList = ({ movies }) => {
   const { pathname } = useLocation();
   const { search } = useLocation();
+  const { path } = useRouteMatch();
 
   return (
     <>

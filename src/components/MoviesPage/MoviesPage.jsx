@@ -5,14 +5,13 @@ import { useHistory, useLocation } from 'react-router';
 
 const MoviePage = () => {
   const location = useLocation();
+  const history = useHistory();
   const [input, setInput] = useState(location.search.slice(7));
   const [movies, setMovies] = useState([]);
-  const history = useHistory();
 
   function inputHendler({ target: { value } }) {
     setInput(value);
   }
-  console.log(location.search);
 
   useEffect(() => {
     if (input.length > 0) {
@@ -25,9 +24,7 @@ const MoviePage = () => {
 
   return (
     <>
-      <form>
-        <input placeholder="Search" value={input} onChange={inputHendler} />
-      </form>
+      <input placeholder="Search" value={input} onChange={inputHendler} />
       <MovieList movies={movies} />
     </>
   );
