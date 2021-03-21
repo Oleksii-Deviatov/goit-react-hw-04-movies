@@ -1,0 +1,30 @@
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 1180px;
+}
+
+.item:not(:nth-child(5n + 5)) {
+  margin-right: 45px;
+}
+
+.item:nth-child(n + 6) {
+  margin-top: 30px;
+}
+
+.img {
+  height: 300px;
+  width: 200px;
+}
+
+.name {
+  text-align: center;
+}
+
+.character {
+  font-size: 10px;
+  text-align: center;
+}

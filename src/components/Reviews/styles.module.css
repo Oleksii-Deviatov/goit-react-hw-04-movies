@@ -1,0 +1,15 @@
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 25px;
+}
+
+.content {
+  margin-bottom: 40px;
+  font-size: 16px;
+}

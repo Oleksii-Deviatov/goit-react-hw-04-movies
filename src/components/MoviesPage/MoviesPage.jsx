@@ -2,6 +2,8 @@ import { React, useState, useEffect } from 'react';
 import MovieList from '../MovieList';
 import { search } from '../../Api';
 import { useHistory, useLocation } from 'react-router';
+import Container from '../Container';
+import styles from './styles.module.css';
 
 const MoviePage = () => {
   const location = useLocation();
@@ -23,10 +25,15 @@ const MoviePage = () => {
   }, [input]);
 
   return (
-    <>
-      <input placeholder="Search" value={input} onChange={inputHendler} />
+    <Container>
+      <input
+        className={styles.input}
+        placeholder="Search"
+        value={input}
+        onChange={inputHendler}
+      />
       <MovieList movies={movies} />
-    </>
+    </Container>
   );
 };
 

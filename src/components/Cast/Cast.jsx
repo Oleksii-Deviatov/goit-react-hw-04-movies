@@ -1,6 +1,8 @@
 import { React, useState, useEffect } from 'react';
 import { credirs } from '../../Api';
 import { useParams } from 'react-router';
+import Container from '../Container';
+import styles from './styles.module.css';
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -13,18 +15,21 @@ const Cast = () => {
   return (
     <>
       {casts && (
-        <ul>
-          {casts.map(({ profile_path, name, character }) => (
-            <li>
-              <img
-                src={`https://image.tmdb.org/t/p/w200/${profile_path}`}
-                alt={name}
-              />
-              <p>{name}</p>
-              <p>Character: {character}</p>
-            </li>
-          ))}
-        </ul>
+        <Container>
+          <ul className={styles.list}>
+            {casts.map(({ profile_path, name, character }) => (
+              <li className={styles.item}>
+                <img
+                  className={styles.img}
+                  src={`https://image.tmdb.org/t/p/w200/${profile_path}`}
+                  alt={name}
+                />
+                <p className={styles.name}>{name}</p>
+                <p className={styles.character}>Character: {character}</p>
+              </li>
+            ))}
+          </ul>
+        </Container>
       )}
     </>
   );
