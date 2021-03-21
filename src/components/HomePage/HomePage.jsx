@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
 import { trending } from '../../Api';
+import MovieList from '../MovieList';
 
 function HomePage() {
   const [trend, setTrend] = useState([]);
@@ -11,13 +11,7 @@ function HomePage() {
 
   return (
     <>
-      <ul>
-        {trend.map(({ id, title }) => (
-          <li key={id}>
-            <NavLink to={`/movies/${id}`}>{title}</NavLink>
-          </li>
-        ))}
-      </ul>
+      <MovieList movies={trend} />
     </>
   );
 }
