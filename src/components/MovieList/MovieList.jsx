@@ -3,6 +3,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 
 const MovieList = ({ movies }) => {
   const { pathname } = useLocation();
+  const { search } = useLocation();
 
   return (
     <>
@@ -12,7 +13,7 @@ const MovieList = ({ movies }) => {
             <NavLink
               to={{
                 pathname: `/movies/${id}`,
-                state: { from: pathname },
+                state: { from: pathname, search: search },
               }}
             >
               {title}

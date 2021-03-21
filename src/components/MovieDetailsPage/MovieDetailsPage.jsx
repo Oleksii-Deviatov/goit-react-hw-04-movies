@@ -5,26 +5,28 @@ import {
   useParams,
   useRouteMatch,
 } from 'react-router';
-import { fullInfo } from '../../Api';
+import { fullInfo, search } from '../../Api';
 import { Route, NavLink } from 'react-router-dom';
 import Cast from '../Cast';
 import Reviews from '../Reviews';
 import styles from './styles.module.css';
 
 function MovieDetailsPage() {
+  const [movie, setMovie] = useState('');
   const { movieId } = useParams();
   const { url, path } = useRouteMatch();
   const history = useHistory();
-  const { state } = useLocation();
-
-  const [movie, setMovie] = useState('');
+  const location = useLocation();
 
   useEffect(() => {
     fullInfo(movieId).then(data => setMovie(data));
   }, [movieId]);
 
   function goBackHeandler() {
-    history.push(state ? state.from : '/');
+    history.push({
+      pathname: location.state ? location.state.from : '/',
+      search: location.state && location.state.search,
+    });
   }
 
   return (
