@@ -10,6 +10,8 @@ import { Route, NavLink } from 'react-router-dom';
 import Cast from '../Cast';
 import Reviews from '../Reviews';
 import Container from '../Container';
+import ReactImageFallback from 'react-image-fallback';
+import fb from '../../imgs/fb450.jpg';
 import styles from './styles.module.css';
 
 function MovieDetailsPage() {
@@ -38,10 +40,12 @@ function MovieDetailsPage() {
             Go back
           </button>
           <div className={styles.wrapper}>
-            <img
+            <ReactImageFallback
               className={styles.img}
               src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
-              alt="{movie.title}"
+              fallbackImage={fb}
+              initialImage="loader.gif"
+              alt={movie.title}
             />
             <div className={styles.textWrapper}>
               <h2 className={styles.title}>{movie.title}</h2>

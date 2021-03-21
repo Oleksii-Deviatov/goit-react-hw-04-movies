@@ -7,6 +7,10 @@
   width: 1180px;
 }
 
+.item {
+  width: 200px;
+}
+
 .item:not(:nth-child(5n + 5)) {
   margin-right: 45px;
 }
@@ -21,6 +25,11 @@
 }
 
 .name {
+  text-align: center;
+}
+
+.characterTitle {
+  font-size: 10px;
   text-align: center;
 }
 
