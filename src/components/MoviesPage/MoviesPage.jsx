@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import MovieList from '../MovieList';
 import { search } from '../../Api';
+import { useLocation, useParams, useRouteMatch } from 'react-router';
 
 const MoviePage = () => {
   const [input, setInput] = useState('');
