@@ -4,10 +4,6 @@ import { NavLink, useLocation } from 'react-router-dom';
 const MovieList = ({ movies }) => {
   const { pathname } = useLocation();
 
-  // location.state = {
-  //   from: location.pathname,
-  // };
-
   return (
     <>
       <ul>

@@ -29,5 +29,3 @@ const Reviews = () => {
 };
 
 export default Reviews;
-
-//We don't have any reviews for this movie

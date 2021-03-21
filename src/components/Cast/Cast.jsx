@@ -9,7 +9,7 @@ const Cast = () => {
   useEffect(() => {
     credirs(movieId).then(data => setCasts(data.cast));
   }, [movieId]);
-  console.log(casts);
+
   return (
     <>
       {casts && (
