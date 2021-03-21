@@ -4,18 +4,20 @@ import { search } from '../../Api';
 import { useHistory, useLocation } from 'react-router';
 
 const MoviePage = () => {
-  const [input, setInput] = useState('');
+  const location = useLocation();
+  const [input, setInput] = useState(location.search.slice(7));
   const [movies, setMovies] = useState([]);
   const history = useHistory();
 
   function inputHendler({ target: { value } }) {
     setInput(value);
   }
+  console.log(location.search);
 
   useEffect(() => {
     if (input.length > 0) {
       search(input).then(data => setMovies(data));
-      history.push({ search: `query&=${input}` });
+      history.push({ search: `query=${input}` });
     } else {
       setMovies([]);
     }
